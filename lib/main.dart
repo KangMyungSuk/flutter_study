@@ -10,12 +10,23 @@ class  MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-          appBar: AppBar(title: Text('앱임'),),
+          //appBar: AppBar(title: Text('앱임'),),
+          //appBar: AppBar(leading: Icon(Icons.star), title: Text('SolidSchema'), ),
+          appBar: AppBar(actions: [Icon(Icons.star), Icon(Icons.star)], title: Text('SolidSchema'), ),
+           body: SizedBox(),
+        ),
+    );
+  }
+}
+
+
+
+          /* 정렬  컨테이너 박스 좌우로 넓게 3장
           body: Align(
             alignment: Alignment.center,
             child: Container(
               width: double.infinity, height: 55, color:Colors.blue,
-
+          */
               // margin: EdgeInsets.all(20), // 외부 여백 shift box
 
               // padding: EdgeInsets.all(20),  // 내부 글씨 내부 박스 벽부터 거리
@@ -27,9 +38,3 @@ class  MyApp extends StatelessWidget {
               //  border: Border.all(color: Colors.black),
               //),
 
-             ),
-          ),
-        )
-    );
-  }
-}
