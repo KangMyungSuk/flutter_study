@@ -8,9 +8,14 @@ var a = SizedBox(
   child: Text('안녕'),
 );
 
-class  MyApp extends StatelessWidget {
+class  MyApp extends StatefulWidget {
   MyApp({Key? key}) : super(key: key);
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   var a = 1;
 
   @override
@@ -20,8 +25,10 @@ class  MyApp extends StatelessWidget {
           floatingActionButton: FloatingActionButton(
             child: Text(a.toString()),
             onPressed: (){
-              print(a);
-              a++;
+              setState(() {
+                a++;
+              });
+
             },
           ),
             appBar: AppBar(),
