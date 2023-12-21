@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 var a = SizedBox(
@@ -9,12 +9,21 @@ var a = SizedBox(
 );
 
 class  MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+
+  var a = 1;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
+          floatingActionButton: FloatingActionButton(
+            child: Text(a.toString()),
+            onPressed: (){
+              print(a);
+              a++;
+            },
+          ),
             appBar: AppBar(),
           bottomNavigationBar: BottomAppBar(),
           body: ListView.builder(
