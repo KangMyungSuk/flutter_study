@@ -17,6 +17,7 @@ class  MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   var a = 1;
+  var name = ['홍일동', '홍이동', '홍삼동'];
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,7 @@ class _MyAppState extends State<MyApp> {
 
             },
           ),
-            appBar: AppBar(),
+            appBar: AppBar( title:Text('앱임')),
           bottomNavigationBar: BottomAppBar(),
           body: ListView.builder(
               itemCount: 3,
@@ -39,7 +40,7 @@ class _MyAppState extends State<MyApp> {
                 print(i);
                 return ListTile(
                   leading: Image.asset('dog.jpg'),
-                  title: Text('홍길동'),
+                  title: Text(name[i]),
                 );
               },
             )
