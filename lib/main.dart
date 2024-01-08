@@ -28,15 +28,7 @@ class _MyAppState extends State<MyApp> {
             onPressed: (){},
           ),
             appBar: AppBar( ),
-            body: ListView.builder(
-              itemCount: 3,
-              itemBuilder: (c, i) {
-                return ListTile(
-                  leading: Image.asset('dog.jpg'),
-                  title: Text(name[i]),
-                );
-              },
-            )
+            body: Dialog(child: Text('sdfsddfsf'),)
           )
         );
     }
