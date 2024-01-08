@@ -17,7 +17,7 @@ class  MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   var a = 1;
-  var name = ['홍일동', '홍이동', '홍삼동'];
+  var name = ['김영숙', '홍길동', '피자집'];
 
   @override
   Widget build(BuildContext context) {
@@ -25,19 +25,12 @@ class _MyAppState extends State<MyApp> {
         home: Scaffold(
           floatingActionButton: FloatingActionButton(
             child: Text(a.toString()),
-            onPressed: (){
-              setState(() {
-                a++;
-              });
-
-            },
+            onPressed: (){},
           ),
-            appBar: AppBar( title:Text('앱임')),
-          bottomNavigationBar: BottomAppBar(),
-          body: ListView.builder(
+            appBar: AppBar( ),
+            body: ListView.builder(
               itemCount: 3,
-              itemBuilder: (context, i) {
-                print(i);
+              itemBuilder: (c, i) {
                 return ListTile(
                   leading: Image.asset('dog.jpg'),
                   title: Text(name[i]),
