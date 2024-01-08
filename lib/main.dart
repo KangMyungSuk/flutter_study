@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp(
+      MaterialApp(
+        home: MyApp()
+    )
+  );
 }
 
 var a = SizedBox(
@@ -21,16 +25,27 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
+    return Scaffold(
           floatingActionButton: FloatingActionButton(
             child: Text(a.toString()),
-            onPressed: (){},
+            onPressed: () {
+              showDialog(context: context, builder: (context) {
+                return Dialog(child: Text('안녕'));
+              });
+            },
           ),
             appBar: AppBar( ),
-            body: Dialog(child: Text('sdfsddfsf'),)
-          )
-        );
+            body: ListView.builder(
+              itemCount: 3,
+              itemBuilder: (c, i) {
+                return ListTile(
+                  leading: Image.asset('dog.jpg'),
+                  title: Text(name[i]),
+                );
+              },
+            )
+          );
+
     }
 }
 
